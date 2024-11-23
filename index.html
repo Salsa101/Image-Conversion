@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Manipulation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+      canvas {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+      }
+      select,
+      input[type="file"],
+      button {
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Upload Page -->
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div id="uploadPage" style="max-width: 500px">
+        <h1 class="pt-2 pb-5 fw-bold">Upload and Transform Your Image</h1>
+        <input
+          type="file"
+          id="imageInput"
+          accept="image/*"
+          class="form-control"
+        />
+        <select id="filterSelect" class="form-select mt-2">
+          <option value="grayscale">Grayscale</option>
+          <option value="blur">Blur</option>
+        </select>
+        <button id="convertButton" class="btn btn-primary mt-2">
+          Upload and Convert
+        </button>
+      </div>
+    </div>
+
+    <!-- Result Page -->
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div id="resultPage" style="display: none; max-width: 600px">
+        <h1 class="fw-bold pt-2 pb-5">Transformation Result</h1>
+        <div class="row canvas-container">
+          <div class="col-6">
+            <h4>Original Image</h4>
+            <canvas id="originalCanvas" style="max-width: 100%"></canvas>
+          </div>
+          <div class="col-6">
+            <h4>Converted Image</h4>
+            <canvas id="convertedCanvas" style="max-width: 100%"></canvas>
+          </div>
+        </div>
+        <button id="backButton" class="btn btn-primary px-5 mt-3 fw-bold">
+          Back
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
